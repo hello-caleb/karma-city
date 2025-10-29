@@ -1,31 +1,138 @@
-## Devvit React Starter
+# 🏙️ Karma City
 
-A starter to build web applications on Reddit's developer platform
+**Build your Reddit town together - A collaborative multiplayer town-building game for Reddit**
 
-- [Devvit](https://developers.reddit.com/): A way to build and deploy immersive games on Reddit
-- [Vite](https://vite.dev/): For compiling the webView
-- [React](https://react.dev/): For UI
-- [Express](https://expressjs.com/): For backend logic
-- [Tailwind](https://tailwindcss.com/): For styles
-- [Typescript](https://www.typescriptlang.org/): For type safety
+## 🎮 What is Karma City?
 
-## Getting Started
+Karma City is an interactive Reddit game where community members spend their Reddit karma to collaboratively build a shared town. Each player contributes buildings to a 10x10 grid, creating a unique town that represents their subreddit's collective creativity.
 
-> Make sure you have Node 22 downloaded on your machine before running!
+## ✨ Features
 
-1. Run `npm create devvit@latest --template=react`
-2. Go through the installation wizard. You will need to create a Reddit account and connect it to Reddit developers
-3. Copy the command on the success page into your terminal
+- **10x10 Collaborative Grid**: A shared town canvas where all community members contribute
+- **5 Unique Buildings**: Each with distinct costs, emojis, and effects
+  - ⚙️ **Meme Factory** (100 karma) - Churn out fresh content
+  - 🛡️ **Bot Defense Grid** (150 karma) - Keep the spam at bay
+  - 🎓 **Mod Academy** (250 karma) - Train the chosen ones
+  - 🏛️ **Gold Lounge** (500 karma) - Where premium users chill
+  - 🗿 **Upvote Monument** (1000 karma) - Peak Reddit achievement
+- **Real-time Stats**: Track Your Karma, Town Karma, and Contributors
+- **Responsive Design**: Works on both mobile and desktop
+- **Persistent State**: Town remains and grows as more people contribute
 
-## Commands
+## 🎯 How to Play
 
-- `npm run dev`: Starts a development server where you can develop your application live on Reddit.
-- `npm run build`: Builds your client and server projects
-- `npm run deploy`: Uploads a new version of your app
-- `npm run launch`: Publishes your app for review
-- `npm run login`: Logs your CLI into Reddit
-- `npm run check`: Type checks, lints, and prettifies your app
+1. Visit r/KarmaCityGame
+2. Open a Karma City post
+3. Click any empty cell in the 10x10 grid
+4. Choose a building you can afford
+5. Watch your building appear and contribute to the town!
 
-## Cursor Integration
+## 🛠️ Technical Stack
 
-This template comes with a pre-configured cursor environment. To get started, [download cursor](https://www.cursor.com/downloads) and enable the `devvit-mcp` when prompted.
+- **Platform**: Devvit (Reddit's developer platform)
+- **Frontend**: React + TypeScript
+- **State Management**: React Hooks (useState)
+- **Styling**: Inline styles for maximum compatibility
+- **Build Tool**: Vite
+
+## 📂 Project Structure
+```
+karma-city/
+├── src/
+│   ├── client/              # Frontend React code
+│   │   ├── components/      # React components
+│   │   │   ├── TownGrid.tsx           # 10x10 grid display
+│   │   │   └── BuildingSelector.tsx   # Building chooser modal
+│   │   ├── hooks/
+│   │   │   └── useTownState.ts        # Game state management
+│   │   └── App.tsx                     # Main app component
+│   ├── server/              # Backend logic
+│   │   └── index.ts
+│   └── shared/              # Shared types
+│       └── gameTypes.ts     # Buildings, state interfaces
+├── devvit.yaml              # Devvit configuration
+└── package.json             # Dependencies
+```
+
+## 🚀 Setup & Development
+
+### Prerequisites
+- Node.js v22+
+- Reddit account
+- Devvit CLI
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/karma-city.git
+cd karma-city
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Upload to Reddit
+npx devvit upload
+```
+
+## 🎨 Game Design Philosophy
+
+**Community-First**: Every building placement is a community contribution
+**Simple but Engaging**: Easy to understand, fun to participate in
+**Reddit-Native**: Uses Reddit karma as the core mechanic
+**Asynchronous Multiplayer**: Players contribute at their own pace
+**Visual Storytelling**: Each town tells a unique story through building placement
+
+## 🏆 Hackathon Categories
+
+### Primary: Community Play
+- **Core Mechanic**: Shared town-building grid
+- **Multiplayer**: Asynchronous collaboration
+- **Community Engagement**: Every player contributes to collective creation
+
+### Bonus: Kiro Award (AI-Assisted Development)
+This project was built with AI assistance (Claude Code) which helped with:
+- Component architecture
+- Type definitions
+- State management patterns
+- UI polish and responsiveness
+
+## 🎯 Future Enhancements
+
+- **Persistent Backend**: Redis for true cross-user state
+- **More Buildings**: Expand to 10-15 unique structures
+- **Animations**: Building placement effects
+- **Leaderboards**: Top contributors
+- **Multiple Towns**: Different grids for different themes
+- **Building Synergies**: Adjacent buildings create bonuses
+- **Town Themes**: Different visual styles
+
+## 📸 Screenshots
+
+*[Add screenshots of your game here]*
+
+## 🎥 Demo Video
+
+*[Add link to demo video here]*
+
+## 🙏 Acknowledgments
+
+- Built for Reddit Community Games Hackathon 2025
+- Developed with Devvit
+- AI assistance by Claude (Anthropic)
+
+## 📄 License
+
+MIT License - Feel free to fork and build upon!
+
+## 🔗 Links
+
+- **Live Demo**: [r/KarmaCityGame](https://reddit.com/r/KarmaCityGame)
+- **GitHub**: [karma-city](https://github.com/hello-caleb/karma-city)
+- **Developer Portal**: [Reddit Developers](https://developers.reddit.com)
+
+---
+
+**Built with ❤️ for the Reddit community**
