@@ -1,0 +1,266 @@
+/* Base synergy glow classes */
+.synergy-glow {
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Viral Content Hub - Meme Factory + Upvote Monument */
+.synergy-viral-content-hub {
+  box-shadow: 
+    0 0 20px rgba(255, 69, 0, 0.6),
+    inset 0 0 20px rgba(255, 69, 0, 0.2);
+}
+
+/* Security Nexus - Mod Academy + Bot Defense */
+.synergy-security-nexus {
+  box-shadow: 
+    0 0 20px rgba(0, 121, 211, 0.6),
+    inset 0 0 20px rgba(0, 121, 211, 0.2);
+}
+
+/* Monument Plaza - Two Upvote Monuments */
+.synergy-monument-plaza {
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.7),
+    inset 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Community Center - 3+ adjacent buildings */
+.synergy-community-center {
+  box-shadow: 
+    0 0 15px rgba(70, 209, 96, 0.5),
+    inset 0 0 15px rgba(70, 209, 96, 0.2);
+}
+
+/* Multiple synergies - combine effects */
+.synergy-viral-content-hub.synergy-community-center {
+  box-shadow: 
+    0 0 20px rgba(255, 69, 0, 0.6),
+    0 0 15px rgba(70, 209, 96, 0.5),
+    inset 0 0 20px rgba(255, 69, 0, 0.2),
+    inset 0 0 15px rgba(70, 209, 96, 0.2);
+}
+
+.synergy-security-nexus.synergy-community-center {
+  box-shadow: 
+    0 0 20px rgba(0, 121, 211, 0.6),
+    0 0 15px rgba(70, 209, 96, 0.5),
+    inset 0 0 20px rgba(0, 121, 211, 0.2),
+    inset 0 0 15px rgba(70, 209, 96, 0.2);
+}
+
+.synergy-monument-plaza.synergy-community-center {
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.7),
+    0 0 15px rgba(70, 209, 96, 0.5),
+    inset 0 0 25px rgba(255, 215, 0, 0.3),
+    inset 0 0 15px rgba(70, 209, 96, 0.2);
+}
+
+/* Mobile optimization - reduced glow intensity and performance optimizations */
+@media (max-width: 768px) {
+  .synergy-viral-content-hub {
+    box-shadow: 
+      0 0 15px rgba(255, 69, 0, 0.4),
+      inset 0 0 15px rgba(255, 69, 0, 0.15);
+  }
+
+  .synergy-security-nexus {
+    box-shadow: 
+      0 0 15px rgba(0, 121, 211, 0.4),
+      inset 0 0 15px rgba(0, 121, 211, 0.15);
+  }
+
+  .synergy-monument-plaza {
+    box-shadow: 
+      0 0 18px rgba(255, 215, 0, 0.5),
+      inset 0 0 18px rgba(255, 215, 0, 0.2);
+  }
+
+  .synergy-community-center {
+    box-shadow: 
+      0 0 12px rgba(70, 209, 96, 0.4),
+      inset 0 0 12px rgba(70, 209, 96, 0.15);
+  }
+
+  /* Reduce connection line opacity on mobile for better performance */
+  .synergy-connection {
+    opacity: 0.5;
+  }
+
+  /* Optimize multiple synergy combinations for mobile */
+  .synergy-viral-content-hub.synergy-community-center {
+    box-shadow: 
+      0 0 15px rgba(255, 69, 0, 0.4),
+      0 0 12px rgba(70, 209, 96, 0.4),
+      inset 0 0 15px rgba(255, 69, 0, 0.15),
+      inset 0 0 12px rgba(70, 209, 96, 0.15);
+  }
+
+  .synergy-security-nexus.synergy-community-center {
+    box-shadow: 
+      0 0 15px rgba(0, 121, 211, 0.4),
+      0 0 12px rgba(70, 209, 96, 0.4),
+      inset 0 0 15px rgba(0, 121, 211, 0.15),
+      inset 0 0 12px rgba(70, 209, 96, 0.15);
+  }
+
+  .synergy-monument-plaza.synergy-community-center {
+    box-shadow: 
+      0 0 18px rgba(255, 215, 0, 0.5),
+      0 0 12px rgba(70, 209, 96, 0.4),
+      inset 0 0 18px rgba(255, 215, 0, 0.2),
+      inset 0 0 12px rgba(70, 209, 96, 0.15);
+  }
+}
+
+/* Connecting lines between synergistic buildings */
+.synergy-connection {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  height: 2px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.synergy-connection.vertical {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, currentColor, transparent);
+}
+
+.synergy-connection.viral-content-hub {
+  color: #ff4500;
+}
+
+.synergy-connection.security-nexus {
+  color: #0079d3;
+}
+
+.synergy-connection.monument-plaza {
+  color: #ffd700;
+}
+
+.synergy-connection.community-center {
+  color: #46d160;
+}
+
+/* Synergy highlight animation for new synergies */
+@keyframes synergyHighlight {
+  0% {
+    box-shadow: 
+      0 0 30px rgba(255, 215, 0, 0.9),
+      inset 0 0 30px rgba(255, 215, 0, 0.4);
+  }
+  100% {
+    box-shadow: inherit;
+  }
+}
+
+.synergy-new-highlight {
+  animation: synergyHighlight 2s ease-out;
+}
+
+/* Accessibility - high contrast mode support */
+@media (prefers-contrast: high) {
+  .synergy-viral-content-hub {
+    box-shadow: 
+      0 0 20px rgba(255, 69, 0, 0.8),
+      inset 0 0 20px rgba(255, 69, 0, 0.3);
+  }
+
+  .synergy-security-nexus {
+    box-shadow: 
+      0 0 20px rgba(0, 121, 211, 0.8),
+      inset 0 0 20px rgba(0, 121, 211, 0.3);
+  }
+
+  .synergy-monument-plaza {
+    box-shadow: 
+      0 0 25px rgba(255, 215, 0, 0.9),
+      inset 0 0 25px rgba(255, 215, 0, 0.4);
+  }
+
+  .synergy-community-center {
+    box-shadow: 
+      0 0 15px rgba(70, 209, 96, 0.7),
+      inset 0 0 15px rgba(70, 209, 96, 0.3);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .synergy-glow {
+    transition: none;
+  }
+  
+  .synergy-new-highlight {
+    animation: none;
+  }
+  
+  .synergy-connection {
+    opacity: 0.8; /* Make connections more visible when animations are disabled */
+  }
+}
+
+/* Performance optimizations */
+.synergy-glow {
+  /* Use GPU acceleration for better performance */
+  transform: translateZ(0);
+  will-change: box-shadow;
+}
+
+.synergy-connection {
+  /* Optimize connection lines for smooth rendering */
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .synergy-viral-content-hub {
+    box-shadow: 
+      0 0 20px rgba(255, 69, 0, 0.8),
+      inset 0 0 20px rgba(255, 69, 0, 0.3);
+  }
+
+  .synergy-security-nexus {
+    box-shadow: 
+      0 0 20px rgba(0, 121, 211, 0.8),
+      inset 0 0 20px rgba(0, 121, 211, 0.3);
+  }
+
+  .synergy-monument-plaza {
+    box-shadow: 
+      0 0 25px rgba(255, 215, 0, 0.9),
+      inset 0 0 25px rgba(255, 215, 0, 0.4);
+  }
+
+  .synergy-community-center {
+    box-shadow: 
+      0 0 15px rgba(70, 209, 96, 0.7),
+      inset 0 0 15px rgba(70, 209, 96, 0.3);
+  }
+}
+
+/* Low-end device optimizations */
+@media (max-width: 480px) and (max-height: 800px) {
+  .synergy-glow {
+    /* Disable GPU acceleration on very low-end devices to prevent crashes */
+    transform: none;
+    will-change: auto;
+  }
+  
+  .synergy-viral-content-hub,
+  .synergy-security-nexus,
+  .synergy-monument-plaza,
+  .synergy-community-center {
+    /* Further reduce glow intensity on very small screens */
+    filter: brightness(0.8);
+  }
+  
+  .synergy-connection {
+    opacity: 0.3;
+  }
+}
